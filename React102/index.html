@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Template</title>
+
+    <style>
+        div{
+            font-size: 1.5em;
+        }
+
+    </style>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+<!--PRUEBA JSX RÁPDIO-->
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+        const $app = document.getElementById("app");
+        const useState = React.useState;
+
+
+        const Avatar = ({id, name = "user", size = "medium"}) => {
+            const [enabled, setEnabled] = useState(true)    
+
+            
+
+            const src=`https://randomuser.me/api/portraits/men/${id}.jpg`
+            const nombre=name
+
+            let pictureClassName = "";
+
+            if(size === "small"){
+                pictureClassName = "is-small";
+            }
+            else if(size === "medium"){
+                pictureClassName = "is-medium";
+            }
+            else if(size === "large"){
+                pictureClassName = "is-large";
+            }
+
+            //const pictureClassName = size === "small" ? "is-small" : "";
+            const imgClassName = enabled ? '' : 'disabled'
+
+            return (
+                <picture className={pictureClassName}>
+                    {id ? (
+                        <img onClick={() => setEnabled(!enabled)} className={imgClassName} src={src} />
+                    ) : (
+                        
+                        <img onClick={() => setEnabled(!enabled)} className={imgClassName} src={"https://randomuser.me/api/portraits/lego/6.jpg"} />
+
+                    )
+
+                    }
+                <p>{enabled ? name: "Desactivado"}</p>
+                </picture>
+                );
+            
+        }
+
+        function Contador(){
+            let [contadorValue, contadorActualizador] = useState(77);
+            let [numeroDeVeces, actualizarVeces] = useState(0);
+
+            /*
+            let contadorValue = contadorState[0];
+            let contadorActualizador = contadorState[1];
+            */
+
+
+            return (
+                <div>
+                    <span>{contadorValue}</span>    
+                    <button onClick={() => {
+                        contadorActualizador(contadorValue + 1);
+                        actualizarVeces(numeroDeVeces + 1)
+                    }}>Incrementar</button>
+                    <button onClick={() => {
+                        contadorActualizador(contadorValue -1);
+                        actualizarVeces(numeroDeVeces + 1)
+                    }}>Decrementar -</button>
+                    <p>Números de veces utilizado {numeroDeVeces}</p>
+                </div>
+
+            )
+            
+        }
+
+        ReactDOM.render(
+            <div>
+               <Contador />
+            </div>
+            , $app)
+    </script>
+</body>
+</html>
