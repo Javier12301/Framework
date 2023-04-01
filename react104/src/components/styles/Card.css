@@ -1,0 +1,31 @@
+.card{
+    background-color: #f1faee;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    min-width: 400px;
+}
+
+button{
+    background-color: #2e6485;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+
+    margin: 0 5px;
+    padding: 15px 20px;
+
+    color: #f1faee;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background-color: #3f7496;
+    border-radius: 25px;
+    cursor: pointer;
+    
+}
