@@ -1,0 +1,41 @@
+.tw-followcard{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.tw-followcard-header{
+    display: flex;
+    align-items: center;
+    gap: 4px
+}
+
+.tw-followcard-avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 1000px;
+}
+
+.tw-followcard-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.tw-followcard-infoUserName{
+    opacity: .6;
+}
+
+.tw-followcard-button{
+    /*create a twitter button of follow*/
+    background-color: #ffffff;
+    margin-left: 16px;
+    color: #000000;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 500;
+    cursor: pointer;
+
+}

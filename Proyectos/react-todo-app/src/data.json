@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "task": "Learn React",
+        "completed": false
+    },
+
+    {
+        "id": 2,
+        "task": "Learn Redux",
+        "completed": true
+    },
+
+    {
+        "id": 3,
+        "task": "Learn React-Redux",
+        "completed": false
+    },
+
+    {
+        "id": 4,
+        "task": "Learn React-Router",
+        "completed": true
+    }
+]
